@@ -972,7 +972,15 @@ static int stm32x_probe(struct flash_bank *bank)
 		break;
 	default:
 		LOG_WARNING("Cannot identify target as a STM32 family.");
-		return ERROR_FAIL;
+		LOG_WARNING("Use STM32F03x");
+		page_size = 1024;
+		stm32x_info->ppage_size = 4;
+		max_flash_size_in_kb = 32;
+		stm32x_info->user_data_offset = 16;
+		stm32x_info->option_offset = 6;
+		stm32x_info->default_rdp = 0xAA;
+		stm32x_info->can_load_options = true;
+		break;
 	}
 
 	/* get flash size from target. */
