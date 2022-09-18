@@ -975,7 +975,7 @@ static int stm32x_probe(struct flash_bank *bank)
 		LOG_WARNING("Use STM32F03x as default");
 		page_size = 1024;
 		stm32x_info->ppage_size = 4;
-		max_flash_size_in_kb = 32;
+		max_flash_size_in_kb = 64;
 		stm32x_info->user_data_offset = 16;
 		stm32x_info->option_offset = 6;
 		stm32x_info->default_rdp = 0xAA;
