@@ -972,7 +972,7 @@ static int stm32x_probe(struct flash_bank *bank)
 		break;
 	default:
 		LOG_WARNING("Cannot identify target as a STM32 family.");
-		LOG_WARNING("Use STM32F03x");
+		LOG_WARNING("Use STM32F03x as default");
 		page_size = 1024;
 		stm32x_info->ppage_size = 4;
 		max_flash_size_in_kb = 32;
